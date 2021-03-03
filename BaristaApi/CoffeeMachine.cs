@@ -8,6 +8,8 @@ public class CoffeeMachine
     private int _water;
     private int _milk;
     private int _foamedMilk;
+    private int _cream;
+    private int _alcohol;
     private int _ChocolateSyrup;
     private List<Bean> _beans = new List<Bean>(); // Multiple beans can be used in the same beverage
     private bool isGrinded;
@@ -19,7 +21,8 @@ public class CoffeeMachine
         Espresso,
         Macchiato,
         Mocha,
-        Latte
+        Latte,
+        felixSpeziale
     }
 
     public CoffeeMachine AddWater(int amount, int perfectTemperature)
