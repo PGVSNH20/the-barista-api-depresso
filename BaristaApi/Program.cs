@@ -63,14 +63,19 @@ namespace BaristaApi
     }
 
 [TestClass]
-    public class CoffeeTests
+    public class TestCoffee
     {
-        FluentEspresso beverage;
+        CoffeeMachine beverage;
 
         [TestMethod]
         public void CappuccinoTest()
         {
-            beverage = new FluentEspresso().AddWater(50, 80).AddBeans(new Bean(5, Bean.BeanTypes.Arabica)).GrindBeans().AddMilk(15).AddFoamMilk(10);
+            beverage = new CoffeeMachine()
+                .AddWater(30, 85)
+                .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
+                .GrindBeans()
+                .AddMilk(50)
+
             Assert.AreEqual("Cappuccino", beverage.ToBeverage());
         }
     }
