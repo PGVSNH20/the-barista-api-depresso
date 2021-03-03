@@ -3,149 +3,150 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-public class CoffeeMachine
+namespace BaristaApi
 {
-    private int _water;
-    private int _milk;
-    private int _foamedMilk;
-    private int _cream;
-    private int _alcohol;
-    private int _ChocolateSyrup;
-    private List<Bean> _beans = new List<Bean>(); // Multiple beans can be used in the same beverage
-    private bool isGrinded;
-    private int perfectTemperature;
-    public enum CoffeeType
+    public class CoffeeMachine
     {
-        Cappuccino,
-        Americano,
-        Espresso,
-        Macchiato,
-        Mocha,
-        Latte,
-        felixSpeziale
-    }
-
-    public CoffeeMachine AddWater(int amount, int perfectTemperature)
-    {
-        _water += amount;
-        this.perfectTemperature = perfectTemperature;
-        HeatWater();
-        return this;
-    }
-
-    public CoffeeMachine AddMilk(int amount)
-    {
-        _milk += amount;
-        return this;
-    }
-
-    public CoffeeMachine AddCream(int amount)
-    {
-        _cream += amount;
-        return this;
-    }
-
-    public CoffeeMachine AddAlcohol(int amount)
-    {
-        _alcohol += amount;
-        return this;
-
-        if _alchohol.count < 60 {
-            throw new Exception("Felix not happy");
+        private int _water, _extraWater;
+        private int _milk;
+        private int _foamedMilk;
+        private int _ChocolateSyrup;
+        private int _alcohol;
+        private List<Bean> _beans = new List<Bean>();
+        private bool isGrinded;
+        private int perfectTemperature;
+        public enum CoffeeType
+        {
+            Cappuccino,
+            Americano,
+            Espresso,
+            Macchiato,
+            Mocha,
+            Latte,
+            felixSpeziale
         }
 
-        else
+        public CoffeeMachine AddWater(int amount, int perfectTemperature = 35)
         {
-            throw new Exception("Felix very happy");
-        }
-    }
-
-    public CoffeeMachine AddFoamMilk(int amount)
-    {
-        _foamedMilk += amount;
-        return this;
-    }
-
-    public CoffeeMachine AddChocolateSyrup(int amount)
-    {
-        _ChocolateSyrup += amount;
-        return this;
-    }
-
-    public CoffeeMachine AddBeans(Bean bean)
-    {
-        _beans.Add(bean);
-        return this;
-    }
-
-    public CoffeeMachine GrindBeans()
-    {
-        if (_beans.Count < 0)
-        {
-            throw new Exception("No beans were found");
+            _water += amount;
+            this.perfectTemperature = perfectTemperature;
+            HeatWater();
+            return this;
         }
 
-        isGrinded = true;
-        return this;
-    }
-
-    public void HeatWater()
-    {
-        Random rand = new Random();
-        int temperature = rand.Next(10, 40); // Luke-warm water
-        while (temperature < perfectTemperature)
+        public CoffeeMachine AddWater(int amount, bool extraWater)
         {
-            temperature += rand.Next(4, 10);
-            if (temperature > perfectTemperature)
+            if (extraWater)
             {
-                temperature = perfectTemperature;
+                _extraWater += amount;
             }
-            Thread.Sleep(1000);
-            Console.WriteLine($"Water temperature is: {temperature}c");
-        }
-    }
-
-    public string ToBeverage()
-    {
-        if (_beans.Count <= 0 || _water <= 0)
-        {
-            throw new Exception("Key elements not found in beverage");
+            return this;
         }
 
-        if (!isGrinded)
+        public CoffeeMachine AddMilk(int amount)
         {
-            throw new Exception("Beans have not been grinded");
+            _milk += amount;
+            return this;
         }
 
-        if (_foamedMilk > 0)
+        public CoffeeMachine AddAlcohol(int amount)
         {
+            _alcohol += amount;
+            return this;
+        }
+
+        public CoffeeMachine AddFoamMilk(int amount)
+        {
+            _foamedMilk += amount;
+            return this;
+        }
+
+        public CoffeeMachine AddChocolateSyrup(int amount)
+        {
+            _ChocolateSyrup += amount;
+            return this;
+        }
+
+        public CoffeeMachine AddBeans(Bean bean)
+        {
+            _beans.Add(bean);
+            return this;
+        }
+
+        public CoffeeMachine GrindBeans()
+        {
+            if (_beans.Count < 0)
+            {
+                throw new Exception("No beans were found");
+            }
+
+            isGrinded = true;
+            return this;
+        }
+
+        public void HeatWater()
+        {
+            Random rand = new Random();
+            int temperature = rand.Next(10, 40); // Luke-warm water
+            while (temperature < perfectTemperature)
+            {
+                temperature += rand.Next(4, 10);
+                if (temperature > perfectTemperature)
+                {
+                    temperature = perfectTemperature;
+                }
+                Thread.Sleep(1000);
+                Console.WriteLine($"Water temperature is: {temperature}c");
+            }
+        }
+
+        public string ToBeverage()
+        {
+            if (_beans.Count <= 0 || _water <= 0)
+            {
+                throw new Exception("Key elements not found in beverage");
+            }
+
+            if (!isGrinded)
+            {
+                throw new Exception("Beans have not been grinded");
+            }
+
+            if (_foamedMilk > 0)
+            {
+                if (_milk > 0)
+                {
+                    return CoffeeType.Cappuccino.ToString();
+                }
+                else
+                {
+                    return CoffeeType.Macchiato.ToString();
+                }
+            }
+
+            if (_ChocolateSyrup > 0)
+            {
+                return CoffeeType.Mocha.ToString();
+            }
+
+            if (_extraWater > 0)
+            {
+                return CoffeeType.Americano.ToString();
+            }
+
+            if (_alcohol > 0 && _milk > 0)
+            {
+                return CoffeeType.felixSpeziale.ToString();
+            }
+
             if (_milk > 0)
             {
-                return CoffeeType.Cappuccino.ToString();
+                return CoffeeType.Latte.ToString();
             }
             else
             {
-                return CoffeeType.Macchiato.ToString();
+                return CoffeeType.Espresso.ToString();
             }
-        }
-
-        if (_ChocolateSyrup > 0)
-        {
-            return CoffeeType.Mocha.ToString();
-        }
-
-        if (_water > 0)
-        {
-            return CoffeeType.Americano.ToString();
-        }
-
-        if (_milk > 0)
-        {
-            return CoffeeType.Latte.ToString();
-        }
-        else
-        {
-            return CoffeeType.Espresso.ToString();
         }
     }
 }

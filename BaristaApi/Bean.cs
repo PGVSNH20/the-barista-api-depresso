@@ -2,7 +2,7 @@ namespace BaristaApi
 {
     public class Bean
     {
-        public double weightInGrams;
+        public double weightGrams;
         public BeanTypes beanType;
         public enum BeanTypes
         {
@@ -12,9 +12,9 @@ namespace BaristaApi
             Excelsa
         }
 
-        public Bean(double weightInGrams, BeanTypes beanType)
+        public Bean(double weightGrams, BeanTypes beanType)
         {
-            this.weightInGrams = weightInGrams;
+            this.weightGrams = weightGrams;
             this.beanType = beanType;
         }
     }
