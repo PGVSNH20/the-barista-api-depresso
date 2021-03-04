@@ -97,7 +97,7 @@ namespace BaristaApi
                 {
                     temperature = perfectTemperature;
                 }
-                Thread.Sleep(1000);
+               
                 Console.WriteLine($"Water temperature is: {temperature}c");
             }
 

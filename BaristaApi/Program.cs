@@ -25,22 +25,21 @@ namespace BaristaApi
                 //    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
                 //    .GrindBeans();
 
-
-
-                //                        CoffeeMachine macchiato = new CoffeeMachine()
-                //                            .AddWater(30, 90)
-                //                            .AddBeans(new Bean(3, Bean.BeanTypes.Robusta))
-                //                            .GrindBeans()
-                //                            .AddFoamMilk(30);
-
-                //CoffeeMachine mocha = new CoffeeMachine()
+                //CoffeeMachine Macchiato = new CoffeeMachine()
                 //    .AddWater(30, 90)
-                //    .AddBeans(new Bean(3, Bean.BeanTypes.Excelsa))
+                //    .AddBeans(new Bean(3, Bean.BeanTypes.Robusta))
                 //    .GrindBeans()
-                //    .AddChocolateSyrup(10)
-                //    .AddMilk(30);
+                //    .AddFoamMilk(30);
 
-                IBeverage felixSpeziale = new CoffeeMachine()
+                IBeverage Mocha = new CoffeeMachine()
+                    .AddWater(30, 90)
+                    .AddBeans(new Bean(3, Bean.BeanTypes.Excelsa))
+                    .GrindBeans()
+                    .AddChocolateSyrup(10)
+                    .AddMilk(30)
+                    .ToBeverage();
+
+                IBeverage FelixSpeziale = new CoffeeMachine()
                  .AddWater(30, 85)
                  .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
                  .GrindBeans()
@@ -48,12 +47,10 @@ namespace BaristaApi
                  .AddMilk(20)
                  .ToBeverage();
 
-                //  CoffeeMachine brew2 = new CoffeeMachine().AddWater(25, 85).AddMilk(20).AddChocolateSyrup(10).AddBeans(new Bean(4, Bean.BeanTypes.Arabica)).GrindBeans();
+               ;
 
                 Console.WriteLine("\nBrew is done!");
-                Console.WriteLine("\nEnjoy your " + felixSpeziale.ToString() + " :)");
-                //Console.WriteLine("\nEnjoy your " + brew2.ToBeverage() + " :)");
-                // Console.WriteLine("\nEnjoy your " + espresso.ToBeverage() + " :)");
+                Console.WriteLine("\nEnjoy your " + FelixSpeziale.ToString() + " :)");
             }
 
             catch (Exception e)
