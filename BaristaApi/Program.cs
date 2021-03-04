@@ -15,6 +15,14 @@ namespace BaristaApi
                 .GrindBeans()
                 .ToBeverage();
 
+                IBeverage Latte = new CoffeeMachine()
+               .AddWater(50, 90)
+               .AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
+               .GrindBeans()
+               .AddMilk(35)
+               .ToBeverage();
+
+
                 IBeverage Cappuccino = new CoffeeMachine()
                                              .AddWater(50, 85)
                                              .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
