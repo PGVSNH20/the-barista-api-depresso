@@ -97,14 +97,11 @@ namespace BaristaApi
                 {
                     temperature = perfectTemperature;
                 }
-               
-                Console.WriteLine($"Water temperature is: {temperature}c");
+ 
             }
+        }
 
-
-            }
-
-            public IBeverage ToBeverage()
+        public IBeverage ToBeverage()
         {
             if (Bean.Count <= 0 || _water <= 0)
             {

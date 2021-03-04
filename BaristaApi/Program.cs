@@ -63,12 +63,8 @@ namespace BaristaApi
                  .AddMilk(20)
                  .ToBeverage();
 
-               ;
-
-                Console.WriteLine("\nBrew is done!");
-                Console.WriteLine("\nEnjoy your " + Latte.ToString() + " :)");
-                //Console.WriteLine("\nEnjoy your " + brew2.ToBeverage() + " :)");
-                // Console.WriteLine("\nEnjoy your " + espresso.ToBeverage() + " :)");
+                Console.WriteLine("Brew is done!");
+                Console.WriteLine("\nEnjoy your " + FelixSpeziale.ToString() + " :)");   
             }
 
             catch (Exception e)

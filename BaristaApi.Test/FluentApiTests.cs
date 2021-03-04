@@ -1,6 +1,5 @@
 using Xunit;
 
-
 namespace BaristaApi.Tests
 {
     public class FluentApiTests
