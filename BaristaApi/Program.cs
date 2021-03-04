@@ -46,6 +46,7 @@ namespace BaristaApi
                     .AddMilk(30)
                     .ToBeverage();
 
+
                 IBeverage FelixSpeziale = new CoffeeMachine()
                  .AddWater(30, 85)
                  .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
@@ -58,6 +59,8 @@ namespace BaristaApi
 
                 Console.WriteLine("\nBrew is done!");
                 Console.WriteLine("\nEnjoy your " + FelixSpeziale.ToString() + " :)");
+                //Console.WriteLine("\nEnjoy your " + brew2.ToBeverage() + " :)");
+                // Console.WriteLine("\nEnjoy your " + espresso.ToBeverage() + " :)");
             }
 
             catch (Exception e)
