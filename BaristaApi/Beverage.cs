@@ -74,7 +74,7 @@ class Cappuccino : IBeverage
     public string CupType => "Large";
 }
 
-class FelixSpeziale : IBeverage
+public class FelixSpeziale : IBeverage
 {
     public List<string> Ingredients => new List<string>()
     {
