@@ -9,27 +9,34 @@ namespace BaristaApi
             try
 
             {
-                //CoffeeMachine espresso = new CoffeeMachine()
-                //.AddWater(50, 90)
-                //.AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
-                //.GrindBeans();
-                //CoffeeMachine cappuccino = new CoffeeMachine()
-                //                            .AddWater(50, 85)
-                //                            .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
-                //                            .GrindBeans()
-                //                            .AddMilk(25)
-                //                            .AddFoamMilk(10);
+                IBeverage Espresso = new CoffeeMachine()
+                .AddWater(50, 90)
+                .AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
+                .GrindBeans()
+                .ToBeverage();
 
-                //CoffeeMachine americano = new CoffeeMachine()
-                //    .AddWater(50, 85)
-                //    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
-                //    .GrindBeans();
+                IBeverage Cappuccino = new CoffeeMachine()
+                                             .AddWater(50, 85)
+                                             .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
+                                             .GrindBeans()
+                                             .AddMilk(25)
+                                             .AddFoamMilk(10)
+                                             .ToBeverage();
 
-                //CoffeeMachine Macchiato = new CoffeeMachine()
-                //    .AddWater(30, 90)
-                //    .AddBeans(new Bean(3, Bean.BeanTypes.Robusta))
-                //    .GrindBeans()
-                //    .AddFoamMilk(30);
+                IBeverage Americano = new CoffeeMachine()
+                    .AddWater(50, 85)
+                    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
+                    .AddWater(20, true)
+                    .GrindBeans()
+                    .ToBeverage();
+
+                IBeverage Macchiato = new CoffeeMachine()
+                    .AddWater(30, 90)
+                    .AddBeans(new Bean(3, Bean.BeanTypes.Robusta))
+                    .GrindBeans()
+                    .AddFoamMilk(30)
+                    .ToBeverage();
+
 
                 IBeverage Mocha = new CoffeeMachine()
                     .AddWater(30, 90)
