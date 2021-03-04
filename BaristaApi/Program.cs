@@ -8,12 +8,11 @@ namespace BaristaApi
         {
             try
 
-
             {
                 //CoffeeMachine espresso = new CoffeeMachine()
-                //                                            .AddWater(50, 90)
-                //                                            .AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
-                //                                            .GrindBeans();
+                //.AddWater(50, 90)
+                //.AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
+                //.GrindBeans();
                 //CoffeeMachine cappuccino = new CoffeeMachine()
                 //                            .AddWater(50, 85)
                 //                            .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
@@ -25,7 +24,6 @@ namespace BaristaApi
                 //    .AddWater(50, 85)
                 //    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
                 //    .GrindBeans();
-
 
 
 
@@ -42,35 +40,28 @@ namespace BaristaApi
                 //    .AddChocolateSyrup(10)
                 //    .AddMilk(30);
 
+                IBeverage felixSpeziale = new CoffeeMachine()
+                 .AddWater(30, 85)
+                 .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
+                 .GrindBeans()
+                 .AddAlcohol(50)
+                 .AddMilk(20)
+                 .ToBeverage();
 
-
-                CoffeeMachine FelixSpeziale = new CoffeeMachine()
-                  .AddWater(30, 85)
-                  .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
-                  .GrindBeans()
-                  .AddAlcohol(50)
-                  .AddMilk(20);
-
-
-
-                //CoffeeMachine brew1 = new CoffeeMachine().AddWater(25, 85).AddMilk(20).AddAlcohol(50).AddBeans(new Bean(4, Bean.BeanTypes.Arabica)).GrindBeans();
-
-                //CoffeeMachine brew2 = new CoffeeMachine().AddWater(25, 85).AddMilk(20).AddChocolateSyrup(10).AddBeans(new Bean(4, Bean.BeanTypes.Arabica)).GrindBeans();
+                //  CoffeeMachine brew2 = new CoffeeMachine().AddWater(25, 85).AddMilk(20).AddChocolateSyrup(10).AddBeans(new Bean(4, Bean.BeanTypes.Arabica)).GrindBeans();
 
                 Console.WriteLine("\nBrew is done!");
-                //Console.WriteLine("\nEnjoy your " + brew1.ToBeverage() + " :)");
+                Console.WriteLine("\nEnjoy your " + felixSpeziale.ToString() + " :)");
                 //Console.WriteLine("\nEnjoy your " + brew2.ToBeverage() + " :)");
-                Console.WriteLine("\nEnjoy your " + FelixSpeziale.ToBeverage() + " :)");
-
+                // Console.WriteLine("\nEnjoy your " + espresso.ToBeverage() + " :)");
             }
+
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-
-
             }
 
-            Console.ReadKey();
+            Console.Read();
         }
     }
 }

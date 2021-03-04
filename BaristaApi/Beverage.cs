@@ -6,7 +6,7 @@ public interface IBeverage
     string CupType { get; }
 }
 
-class Espresso : IBeverage
+public class Espresso : IBeverage
 {
     public List<string> Ingredients => new List<string>()
     {
@@ -16,7 +16,7 @@ class Espresso : IBeverage
     public string CupType => "Small";
 }
 
-class Latte : IBeverage
+public class Latte : IBeverage
 {
     public List<string> Ingredients => new List<string>()
     {
@@ -27,7 +27,7 @@ class Latte : IBeverage
     public string CupType => "Medium";
 }
 
-class Mocha : IBeverage
+public class Mocha : IBeverage
 {
     public List<string> Ingredients => new List<string>()
     {
@@ -39,7 +39,7 @@ class Mocha : IBeverage
     public string CupType => "Medium";
 }
 
-class Macchiato : IBeverage
+public class Macchiato : IBeverage
 {
     public List<string> Ingredients => new List<string>()
     {
@@ -50,7 +50,7 @@ class Macchiato : IBeverage
     public string CupType => "Medium";
 }
 
-class Americano : IBeverage
+public class Americano : IBeverage
 {
     public List<string> Ingredients => new List<string>()
     {
@@ -62,7 +62,7 @@ class Americano : IBeverage
 }
 
 
-class Cappuccino : IBeverage
+public class Cappuccino : IBeverage
 {
     public List<string> Ingredients => new List<string>()
     {

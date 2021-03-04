@@ -15,7 +15,7 @@ namespace BaristaApi
         private bool isGrinded;
         private int perfectTemperature;
 
-        
+
 
         public enum CoffeeType
         {
@@ -89,7 +89,7 @@ namespace BaristaApi
         public void HeatWater()
         {
             Random rand = new();
-            int temperature = rand.Next(10, 40); 
+            int temperature = rand.Next(10, 40);
             while (temperature < perfectTemperature)
             {
                 temperature += rand.Next(4, 10);
@@ -97,14 +97,14 @@ namespace BaristaApi
                 {
                     temperature = perfectTemperature;
                 }
-                
+                Thread.Sleep(1000);
                 Console.WriteLine($"Water temperature is: {temperature}c");
-            } 
+            }
 
-         
-        }
 
-        public string ToBeverage()
+            }
+
+            public IBeverage ToBeverage()
         {
             if (Bean.Count <= 0 || _water <= 0)
             {
@@ -120,36 +120,37 @@ namespace BaristaApi
             {
                 if (_milk > 0)
                 {
-                    return CoffeeType.Cappuccino.ToString();
+                    return new Cappuccino();
                 }
+
                 else
                 {
-                    return CoffeeType.Macchiato.ToString();
+                    return new Macchiato();
                 }
             }
 
             if (_ChocolateSyrup > 0)
             {
-                return CoffeeType.Mocha.ToString();
+                return new Mocha();
             }
 
             if (_extraWater > 0)
             {
-                return CoffeeType.Americano.ToString();
+                return new Americano();
             }
 
             if (_alcohol > 0 && _milk > 0)
             {
-                return CoffeeType.felixSpeziale.ToString();
+                return new FelixSpeziale();
             }
 
             if (_milk > 0)
             {
-                return CoffeeType.Latte.ToString();
+                return new Latte();
             }
             else
             {
-                return CoffeeType.Espresso.ToString();
+                return new Espresso();
             }
         }
     }
