@@ -66,7 +66,7 @@ namespace BaristaApi
                ;
 
                 Console.WriteLine("\nBrew is done!");
-                Console.WriteLine("\nEnjoy your " + Americano.ToString() + " :)");
+                Console.WriteLine("\nEnjoy your " + Latte.ToString() + " :)");
                 //Console.WriteLine("\nEnjoy your " + brew2.ToBeverage() + " :)");
                 // Console.WriteLine("\nEnjoy your " + espresso.ToBeverage() + " :)");
             }

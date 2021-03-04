@@ -11,7 +11,7 @@ namespace BaristaApi
         private int _foamedMilk;
         private int _ChocolateSyrup;
         private int _alcohol;
-        private readonly List<Bean> Bean = new List<Bean>();
+        private readonly List<Bean> Bean = new();
         private bool isGrinded;
         private int perfectTemperature;
 
