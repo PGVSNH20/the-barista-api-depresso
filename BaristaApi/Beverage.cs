@@ -8,7 +8,7 @@ public interface IBeverage
 
 public class Espresso : IBeverage
 {
-    public List<string> Ingredients => new List<string>()
+    public List<string> Ingredients => new()
     {
         "Base"
     };
@@ -18,7 +18,7 @@ public class Espresso : IBeverage
 
 public class Latte : IBeverage
 {
-    public List<string> Ingredients => new List<string>()
+    public List<string> Ingredients => new()
     {
         "Base",
         "Milk"
@@ -29,7 +29,7 @@ public class Latte : IBeverage
 
 public class Mocha : IBeverage
 {
-    public List<string> Ingredients => new List<string>()
+    public List<string> Ingredients => new()
     {
         "Base",
         "Chocolate Syrup",
@@ -41,7 +41,7 @@ public class Mocha : IBeverage
 
 public class Macchiato : IBeverage
 {
-    public List<string> Ingredients => new List<string>()
+    public List<string> Ingredients => new()
     {
         "Base",
         "Milk foam"
@@ -52,7 +52,7 @@ public class Macchiato : IBeverage
 
 public class Americano : IBeverage
 {
-    public List<string> Ingredients => new List<string>()
+    public List<string> Ingredients => new()
     {
         "Base",
         "Water"
@@ -64,7 +64,7 @@ public class Americano : IBeverage
 
 public class Cappuccino : IBeverage
 {
-    public List<string> Ingredients => new List<string>()
+    public List<string> Ingredients => new()
     {
         "Base",
         "Milk",
@@ -76,7 +76,7 @@ public class Cappuccino : IBeverage
 
 public class FelixSpeziale : IBeverage
 {
-    public List<string> Ingredients => new List<string>()
+    public List<string> Ingredients => new()
     {
         "Base",
         "Alcohol",
