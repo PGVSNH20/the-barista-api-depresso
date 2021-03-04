@@ -10,26 +10,26 @@ namespace BaristaApi
 
             {
                 IBeverage Espresso = new CoffeeMachine()
-                .AddWater(50, 90)
-                .AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
-                .GrindBeans()
-                .ToBeverage();
+                    .AddWater(50, 90)
+                    .AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
+                    .GrindBeans()
+                    .ToBeverage();
 
                 IBeverage Latte = new CoffeeMachine()
-               .AddWater(50, 90)
-               .AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
-               .GrindBeans()
-               .AddMilk(35)
-               .ToBeverage();
+                    .AddWater(50, 90)
+                    .AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
+                    .GrindBeans()
+                    .AddMilk(35)
+                    .ToBeverage();
 
 
                 IBeverage Cappuccino = new CoffeeMachine()
-                                             .AddWater(50, 85)
-                                             .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
-                                             .GrindBeans()
-                                             .AddMilk(25)
-                                             .AddFoamMilk(10)
-                                             .ToBeverage();
+                    .AddWater(50, 85)
+                    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
+                    .GrindBeans()
+                    .AddMilk(25)
+                    .AddFoamMilk(10)
+                    .ToBeverage();
 
                 IBeverage Americano = new CoffeeMachine()
                     .AddWater(50, 85)
@@ -66,7 +66,7 @@ namespace BaristaApi
                ;
 
                 Console.WriteLine("\nBrew is done!");
-                Console.WriteLine("\nEnjoy your " + FelixSpeziale.ToString() + " :)");
+                Console.WriteLine("\nEnjoy your " + Americano.ToString() + " :)");
                 //Console.WriteLine("\nEnjoy your " + brew2.ToBeverage() + " :)");
                 // Console.WriteLine("\nEnjoy your " + espresso.ToBeverage() + " :)");
             }

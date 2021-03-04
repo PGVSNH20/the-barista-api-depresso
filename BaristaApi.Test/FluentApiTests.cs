@@ -22,7 +22,7 @@ namespace BaristaApi.Tests
         [Fact]
         public void When_AddingWaterAndBeans_Expect_Americano()
         {
-            var beverage = new CoffeeMachine().AddWater(50, 85).AddBeans(new Bean(5, Bean.BeanTypes.Arabica)).GrindBeans().ToBeverage();
+            var beverage = new CoffeeMachine().AddWater(50, 85).AddBeans(new Bean(5, Bean.BeanTypes.Arabica)).GrindBeans().AddWater(20, true).ToBeverage();
             Assert.IsType<Americano>(beverage);
         }
 
