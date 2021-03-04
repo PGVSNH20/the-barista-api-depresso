@@ -1,4 +1,3 @@
-using BaristaApi;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -12,9 +11,12 @@ namespace BaristaApi
         private int _foamedMilk;
         private int _ChocolateSyrup;
         private int _alcohol;
-        private List<Bean> _beans = new List<Bean>();
+        private readonly List<Bean> Bean = new List<Bean>();
         private bool isGrinded;
         private int perfectTemperature;
+
+        
+
         public enum CoffeeType
         {
             Cappuccino,
@@ -69,13 +71,13 @@ namespace BaristaApi
 
         public CoffeeMachine AddBeans(Bean bean)
         {
-            _beans.Add(bean);
+            Bean.Add(bean);
             return this;
         }
 
         public CoffeeMachine GrindBeans()
         {
-            if (_beans.Count < 0)
+            if (Bean.Count < 0)
             {
                 throw new Exception("No beans were found");
             }
@@ -86,8 +88,8 @@ namespace BaristaApi
 
         public void HeatWater()
         {
-            Random rand = new Random();
-            int temperature = rand.Next(10, 40); // Luke-warm water
+            Random rand = new();
+            int temperature = rand.Next(10, 40); 
             while (temperature < perfectTemperature)
             {
                 temperature += rand.Next(4, 10);
@@ -97,12 +99,14 @@ namespace BaristaApi
                 }
                 Thread.Sleep(1000);
                 Console.WriteLine($"Water temperature is: {temperature}c");
-            }
+            } 
+
+         
         }
 
         public string ToBeverage()
         {
-            if (_beans.Count <= 0 || _water <= 0)
+            if (Bean.Count <= 0 || _water <= 0)
             {
                 throw new Exception("Key elements not found in beverage");
             }

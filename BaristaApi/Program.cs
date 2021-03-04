@@ -7,11 +7,59 @@ namespace BaristaApi
         static void Main(string[] args)
         {
             try
+
+
             {
-                CoffeeMachine brew = new CoffeeMachine().AddWater(25, 85).AddMilk(20).AddAlcohol(50).AddBeans(new Bean(4, Bean.BeanTypes.Arabica)).GrindBeans().AddWater(15, false);
+CoffeeMachine espresso = new CoffeeMachine()
+                                            .AddWater(50, 90)
+                                            .AddBeans(new Bean(10, Bean.BeanTypes.Robusta))
+                                            .GrindBeans();
+                //CoffeeMachine cappuccino = new CoffeeMachine()
+                //                            .AddWater(50, 85)
+                //                            .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
+                //                            .GrindBeans()
+                //                            .AddMilk(25)
+                //                            .AddFoamMilk(10);
+
+                //CoffeeMachine americano = new CoffeeMachine()
+                //    .AddWater(50, 85)
+                //    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
+                //    .GrindBeans();
+
+                                         
+
+
+                //                        CoffeeMachine macchiato = new CoffeeMachine()
+                //                            .AddWater(30, 90)
+                //                            .AddBeans(new Bean(3, Bean.BeanTypes.Robusta))
+                //                            .GrindBeans()
+                //                            .AddFoamMilk(30);
+
+                //CoffeeMachine mocha = new CoffeeMachine()
+                //    .AddWater(30, 90)
+                //    .AddBeans(new Bean(3, Bean.BeanTypes.Excelsa))
+                //    .GrindBeans()
+                //    .AddChocolateSyrup(10)
+                //    .AddMilk(30);
+
+
+
+                //CoffeeMachine felixSpeziale = new CoffeeMachine()
+                //  .AddWater(30, 85)
+                //  .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
+                //  .GrindBeans()
+                //  .AddAlcohol(50);
+                                            
+
+              
+                //CoffeeMachine brew1 = new CoffeeMachine().AddWater(25, 85).AddMilk(20).AddAlcohol(50).AddBeans(new Bean(4, Bean.BeanTypes.Arabica)).GrindBeans();
+
+                //CoffeeMachine brew2 = new CoffeeMachine().AddWater(25, 85).AddMilk(20).AddChocolateSyrup(10).AddBeans(new Bean(4, Bean.BeanTypes.Arabica)).GrindBeans();
 
                 Console.WriteLine("\nBrew is done!");
-                Console.WriteLine("\nEnjoy your " + brew.ToBeverage() + " :)");
+                //Console.WriteLine("\nEnjoy your " + brew1.ToBeverage() + " :)");
+                //Console.WriteLine("\nEnjoy your " + brew2.ToBeverage() + " :)");
+                Console.WriteLine("\nEnjoy your " + espresso.ToBeverage() + " :)");
 
             }
             catch (Exception e)
@@ -25,49 +73,3 @@ namespace BaristaApi
         }
     }
 }
-
-
-
-//IBeverage cappuccino = new CoffeeMachine()
-//                    .AddWater(50, 85)
-//                    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
-//                    .GrindBeans()
-//                    .AddMilk(25)
-//                    .AddFoamMilk(10);
-
-//IBeverage americano = new CoffeeMachine()
-//    .AddWater(50, 85)
-//    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
-//    .GrindBeans()
-
-//                 IBeverage espresso = new CoffeeMachine()
-//                    .AddWater(50, 90)
-//                    .AddBeans(new Bean(10, Bean.BeanTypes.Arabica.Robusta))
-//                    .GrindBeans()
-
-
-//                IBeverage macchiato = new CoffeeMachine()
-//                    .AddWater(30, 90)
-//                    .AddBeans(new Bean(3, Bean.BeanTypes.Robusta))
-//                    .GrindBeans()
-//                    .AddFoamMilk(30);
-
-//IBeverage mocha = new CoffeeMachine()
-//    .AddWater(30, 90)
-//    .AddBeans(new Bean(3, Bean.BeanTypes.Excelsa))
-//    .GrindBeans()
-//    .AddChocolateSyrup(10)
-//    .AddMilk(30);
-
-//IBeverage cappuccino = new CoffeeMachine()
-//   .AddWater(30, 85)
-//   .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
-//   .GrindBeans()
-//   .AddMilk(50)
-
-//                  IBeverage felixSpeziale = new CoffeeMachine()
-//                    .AddWater(30, 85)
-//                    .AddBeans(new Bean(5, Bean.BeanTypes.Arabica))
-//                    .GrindBeans()
-//                    .AddAlcohol(50)
-//                    .AddCream(50)
