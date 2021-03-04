@@ -62,7 +62,7 @@ namespace BaristaApi
                  .AddMilk(20)
                  .ToBeverage();
 
-                //  CoffeeMachine brew2 = new CoffeeMachine().AddWater(25, 85).AddMilk(20).AddChocolateSyrup(10).AddBeans(new Bean(4, Bean.BeanTypes.Arabica)).GrindBeans();
+               ;
 
                 Console.WriteLine("\nBrew is done!");
                 Console.WriteLine("\nEnjoy your " + FelixSpeziale.ToString() + " :)");
